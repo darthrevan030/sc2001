@@ -28,7 +28,7 @@ def merge(leftList, rightList):
     return sorted
 
 if __name__ == "__main__":
-    test_list = [64, 34, 25, 12, 22, 11, 90]
-    print(f"Original: {test_list}")
-    mergeSort(test_list)
-    print(f"Sorted: {test_list}")
+    testList = [64, 34, 25, 12, 22, 11, 90]
+    print(f"Original: {testList}")
+    sortedList = mergeSort(testList)
+    print(f"Sorted: {sortedList}")
