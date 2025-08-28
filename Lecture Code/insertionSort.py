@@ -7,3 +7,9 @@ def insertionSort(list1):
                 list1[j], list1[j - 1] = list1[j - 1], list1[j] # swap if the new element is smaller 
             else: # otherwise stop
                 break
+
+if __name__ == "__main__":
+    test_list = [64, 34, 25, 12, 22, 11, 90]
+    print(f"Original: {test_list}")
+    insertionSort(test_list)
+    print(f"Sorted: {test_list}")
