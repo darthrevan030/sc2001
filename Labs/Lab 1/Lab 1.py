@@ -2,16 +2,15 @@ import random
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-from typing import List, Tuple
 
 # Global variable to track comparisons
 comparisons = 0
 
-def generateRandomArray(size: int, maxVal: int) -> List[int]:
+def generateRandomArray(size: int, maxVal: int) -> list[int]:
     """Generate an array of random integers in range [1, maxVal]"""
     return [random.randint(1, maxVal) for _ in range(size)]
 
-def insertionSort(arr: List[int], left: int, right: int) -> None:
+def insertionSort(arr: list[int], left: int, right: int) -> None:
     """Insertion sort for small subarrays"""
     global comparisons
     
@@ -29,7 +28,7 @@ def insertionSort(arr: List[int], left: int, right: int) -> None:
             
         arr[j + 1] = key
 
-def merge(arr: List[int], left: int, mid: int, right: int) -> None:
+def merge(arr: list[int], left: int, mid: int, right: int) -> None:
     """Merge two sorted subarrays"""
     global comparisons
     
@@ -63,7 +62,7 @@ def merge(arr: List[int], left: int, mid: int, right: int) -> None:
         j += 1
         k += 1
 
-def hybridSort(arr: List[int], left: int, right: int, s: int) -> None:
+def hybridSort(arr: list[int], left: int, right: int, s: int) -> None:
     """Hybrid sorting algorithm that uses insertion sort for small arrays"""
     if left < right:
         # If subarray size is small (≤ s), use insertion sort
@@ -80,7 +79,7 @@ def hybridSort(arr: List[int], left: int, right: int, s: int) -> None:
             # Merge the sorted halves
             merge(arr, left, mid, right)
 
-def mergeSort(arr: List[int], left: int, right: int) -> None:
+def mergeSort(arr: list[int], left: int, right: int) -> None:
     """Original merge sort implementation for comparison"""
     global comparisons
     
@@ -99,7 +98,7 @@ def resetComparisons():
     global comparisons
     comparisons = 0
 
-def runExperiment(arr: List[int], algorithm: str, s: int = None) -> Tuple[int, float]:
+def runExperiment(arr: list[int], algorithm: str, s: int = None) -> tuple[int, float]:
     """Run sorting experiment and return (comparisons, time_taken)"""
     arr_copy = arr.copy()
     resetComparisons()
